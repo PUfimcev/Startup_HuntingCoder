@@ -1,0 +1,1 @@
+import getPopUpAbout from "./components/getPopUpAbout.js";
