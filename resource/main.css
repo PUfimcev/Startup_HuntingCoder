@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Manrope:wght@400;500;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root{
-    
+    --font-family: "Bakbak One", sans-serif;
+    --font-size: 1rem;
+    --main-color: #EFE2E2;
+
 }
 
 * { 
@@ -8,3 +13,209 @@
     box-sizing: border-box;
 }
 
+html, body{
+    width: 100vw;
+    height: 100vh;
+
+    overscroll-behavior: none;
+
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(139.31deg, rgba(23, 20, 20, 0.6) 22.14%, rgba(23, 20, 20, 0.6) 52.97%, rgba(23, 20, 20, 0.6) 98.39%), url(./images/background_img.png) center/cover no-repeat;
+
+    color: var(--main-color);
+
+    font-family: var(--font-family);
+
+        overflow: hidden;
+        overflow-y: scroll;
+    
+
+}
+
+.container{
+    width: min(90%, 1280px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+
+
+.title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title__about{
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.main__title{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main__title-1, .main__title-2{
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 8.75rem;
+    font-weight: 400;
+}
+
+.main__title-1{
+
+    -webkit-text-stroke: 3px var(--main-color);
+    -webkit-text-fill-color: transparent;
+}
+
+.title__aim{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.title__aim-proger, .title__aim-recruiter{
+    display: inline-block;
+
+    font-size: 2.25rem;
+    font-weight: 500;
+
+}
+
+
+.purposes{
+    align-self: flex-start;
+
+    
+    width: min(50%, 35rem);
+    height: 25rem;
+    position: relative;
+
+}
+
+.purposes ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.purposes ul li {
+    flex: 1;
+    list-style: none;
+    font-size: 1.15rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+   
+}
+
+.purposes ul li .line{
+    height: 1px;
+    width: 2.5rem;
+    background-color: var(--main-color);
+    margin-right: 1.5rem;
+}
+
+.purposes ul li :where(.line, .text){
+    display: block;
+    
+}
+
+
+.purpose_1{
+    
+    margin-left: 45%;
+}
+.purpose_2{
+    
+    margin-left: 25%;
+}
+.purpose_3{
+    
+    margin-left: 10%;
+}
+.purpose_4{
+    margin-left: 25%;
+    
+}
+.purpose_5{
+    
+    margin-left: 45%;
+}
+
+.link__showmore{
+    width: 81px;
+    height: 79px;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: linear-gradient(268.83deg, #2D0404 11.68%, #B23421 53.83%, rgba(178, 52, 33, 0) 94.77%);
+
+    border-radius: 50%;
+
+}
+
+.link__showmore div{
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.link__showmore div .arrow{
+    display: inline-block;
+    padding: 0.5rem 2.5rem;
+    background: url(./images/arrow.png) center/cover no-repeat;
+
+    position: absolute;
+
+    top: 50%;
+    right: 45%;
+    transform: translateY(-50%);
+
+
+}
+
+.main__btn{
+
+    display: inline-block;
+    align-self: flex-end;
+    
+    background: linear-gradient(90deg, #2D0404 17.4%, #B33421 100%);
+    border-radius: 12px;
+    border: 1px solid var(--main-color);
+
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+
+    padding: 1.25rem 2.5rem;
+    margin-right: 10%;
+
+}
+
+
+.essence, .signup__form{
+    display: none;
+}

@@ -1,0 +1,166 @@
+:root{
+    --font-family: "Bakbak One", sans-serif;
+    --font-size: 1rem;
+    --main-color: #EFE2E2;
+
+}
+
+@media screen and (min-width: 1441px){
+
+    .container{
+        width: min(100%, 1440px);
+    }
+
+
+    .title{
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+    }
+
+    .main__title{
+   
+        margin-bottom: 2.5rem;
+    }
+
+
+    .link__showmore{
+        cursor: pointer;
+    }
+
+    .link__showmore:hover{
+        background:  var(--main-color);
+    }
+
+    .link__showmore:hover div .arrow{ 
+        background: url(./images/arrow_hover.png) center/cover no-repeat;
+    }
+
+    .main__btn{
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main__btn::before{
+        content: "";
+        position: absolute;
+        top: var(--y);
+        left: var(--x);
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 750ms;
+        width: 150%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        opacity: 0.5;
+    }
+    
+    .pulse::before {
+        animation: pulse 500ms;
+    }
+    
+    @keyframes pulse {
+        0% { 
+        transform: translate(-50%, -50%) scale(0); 
+        opacity: 0.5;
+        } 
+    
+        100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        }
+    }
+
+    .main__btn:hover{
+        
+        color: #B33421;
+        background:  var(--main-color);
+    }
+
+    .main__btn:hover::before{
+
+        background: linear-gradient(90deg, #2D0404 17.4%, #B33421 100%);
+    }
+
+}
+
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    
+    .container{
+        width: min(90%, 1280px);
+    }
+
+    .title{
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+    }
+    
+    .main__title{
+    
+        margin-bottom: 0;
+    }
+
+    .main__title-1, .main__title-2{
+
+        font-size: 7rem;
+    }
+
+    .link__showmore{
+        cursor: pointer;
+    }
+
+    .link__showmore:hover{
+        background:  var(--main-color);
+    }
+    
+    .link__showmore:hover div .arrow{ 
+        background: url(./images/arrow_hover.png) center/cover no-repeat;
+    }
+
+    .main__btn{
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main__btn::before{
+        content: "";
+        position: absolute;
+        top: var(--y);
+        left: var(--x);
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 750ms;
+        width: 150%;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        opacity: 0.5;
+    }
+    
+    .pulse::before {
+        animation: pulse 500ms;
+    }
+    
+    @keyframes pulse {
+        0% { 
+        transform: translate(-50%, -50%) scale(0); 
+        opacity: 0.5;
+        } 
+    
+        100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        }
+    }
+
+    .main__btn:hover{
+        
+        color: #B33421;
+        background:  var(--main-color);
+    }
+
+    .main__btn:hover::before{
+
+        background: linear-gradient(90deg, #2D0404 17.4%, #B33421 100%);
+    }
+
+}
