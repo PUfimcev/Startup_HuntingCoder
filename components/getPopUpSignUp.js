@@ -1,28 +1,37 @@
-// import axios from 'axios';
-
 class GetPopUpSignUp{
     #signUpElem;
     #callSignUpElem;
+    #input;
+    #checkbox;
 
     constructor(){
         this.#signUpElem =  document.querySelector('.signup__form');
 
         this.#callSignUpElem =  document.querySelector('.main__btn');
 
-        if(!this.#signUpElem || !this.#callSignUpElem) return;
+        this.#input = document.querySelector('#inputData');
+
+        this.#checkbox = document.querySelector('.form-check-control');
+
+        if(!this.#signUpElem || !this.#callSignUpElem || !this.#input) return;
         
         this.getSignUpElem();
     }
 
     getSignUpElem(){
         this.#callSignUpElem.addEventListener('click', () =>{
-            this.#signUpElem.classList.add('show');
-            let input = document.querySelector('#inputData');
-            input.value = '';
 
-            this.closeSignUpElem();
-            this.sendData();
+            this.#input.value = '';
+            
+            this.#checkbox.checked = false;
+            
+            const promise = new Promise((resolve) => setTimeout(() => { resolve(this.#signUpElem.classList.add('show'))}, 500));
 
+            promise.then(res => {
+                
+                this.closeSignUpElem();
+                this.sendData();
+            })
         })
     }
 
@@ -32,27 +41,29 @@ class GetPopUpSignUp{
         
         formBtn.addEventListener('click', (e) =>{
             e.preventDefault();
-            let input = document.querySelector('#inputData');
             let inputData = null;
                 
-            if(input) inputData = input.value;
+            if(this.#input) inputData = this.#input.value;
 
             if(inputData === '' || !inputData) {
-                input.value = 'Вы не ввели данные';
+                this.#input.value = 'Вы не ввели данные';
                 return;
             };
 
             if(inputData === 'Вы не ввели данные') return;
+
+            console.dir(this.#checkbox);
+
+            if(!this.#checkbox.checked) return;
             
             let result = this.postAxios(inputData);
 
             if(result) {
 
-                input.value = '';
+                this.#input.value = '';
+                this.#checkbox.checked = false;
                 this.#signUpElem.classList.remove('show');
             }
-
-
 
         })
     }
@@ -61,17 +72,17 @@ class GetPopUpSignUp{
 
         if(inputData !== '' && inputData !== 'Вы не ввели данные') return true;
 
-        // try {
-        //     const response = await axios.post(
-        //         '/', {
-        //             tg_wa_address: inputData,
-        //         }
-        //     );
+        const postData = {
+            'tg_wa_address': inputData,
+        }
 
-        //     if(response.statusText === 'OK') return true;
+        // try {
+        //     const response = await axios.post('/', postData);
+
+        //     if(response.status === 200) return true;
 
         // } catch (error) {
-        //     console.log(error);
+        //     console.log(error.message);
         // }
     }
 
@@ -81,8 +92,9 @@ class GetPopUpSignUp{
         closeSignUpElem =  document.querySelector('.close__signUp-btn');
 
         closeSignUpElem.addEventListener('click', () =>{
-            let input = document.querySelector('#inputData');
-            input.value = '';
+            
+            this.#input.value = '';
+            this.#checkbox.checked = false;
             this.#signUpElem.classList.remove('show');
         })
     }
