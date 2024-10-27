@@ -68,6 +68,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .main__title-1, .main__title-2{
@@ -88,6 +89,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .title__aim-proger, .title__aim-recruiter{
@@ -101,12 +103,9 @@ main{
 
 .purposes{
     align-self: flex-start;
-
-    
-    width: min(50%, 35rem);
-    height: 25rem;
+    width: min(60%, 45rem);
+    height: 35rem;
     position: relative;
-
 }
 
 .purposes ul{
@@ -120,7 +119,7 @@ main{
 .purposes ul li {
     flex: 1;
     list-style: none;
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -142,7 +141,7 @@ main{
 
 .purpose_1{
     
-    margin-left: 45%;
+    margin-left: 35%;
 }
 .purpose_2{
     
@@ -158,7 +157,7 @@ main{
 }
 .purpose_5{
     
-    margin-left: 45%;
+    margin-left: 35%;
 }
 
 .link__showmore{
@@ -167,7 +166,7 @@ main{
 
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 15%;
     transform: translateY(-50%);
     background: linear-gradient(268.83deg, #2D0404 11.68%, #B23421 53.83%, rgba(178, 52, 33, 0) 94.77%);
 
@@ -218,4 +217,108 @@ main{
 
 .essence, .signup__form{
     display: none;
+}
+
+.essence.show, .signup__form.show{
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.signup__form.show{
+    display: flex;
+}
+
+
+.essence__text{
+    background-color: var(--main-color);
+    width: 45%;
+    max-height: 85%;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 0 auto;
+    margin-top: 5%;
+
+    padding: 3rem 2rem;
+    box-shadow: 0 0 0 100rem rgba(0,0,0,0.6);
+}
+
+.close__btn, .close__signUp-btn{
+    align-self: flex-end;
+    padding: 1rem;
+    background: url(./images/cancel_btn.png) center/cover no-repeat;
+
+    opacity: 0.7;
+}
+
+.form__body{
+    background-color: var(--main-color);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: auto;
+
+    padding: 2rem;
+    box-shadow: 0 0 0 100rem rgba(0,0,0,0.6);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.form__data{
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.form__body .form-label{
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-control{
+    font-size: 1.25rem;
+    padding:0.5rem 1rem ;
+}
+
+.form-text{
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.form-btn{
+    background: linear-gradient(90deg, #2D0404 17.4%, #B33421 100%);
+    border-radius: 12px;
+    border: 1px solid var(--main-color);
+
+    color:  var(--main-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+
+    padding: 1rem 1.5rem;
+    align-self: center;
 }
