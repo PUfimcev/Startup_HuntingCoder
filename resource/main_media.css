@@ -309,7 +309,9 @@
         
         padding-bottom: 1rem;
     }
-
+    .title{
+        margin-bottom: 2rem;
+    }
 
     .main__title-1{
 
@@ -374,7 +376,7 @@
 
     .title__about{
 
-        font-size: 1.2rem;
+        font-size: 1rem;
         
     }
 
@@ -387,12 +389,12 @@
 
     .title__aim{
         justify-content: center;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
 
     .title__aim-proger, .title__aim-recruiter{
     
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     
     }
 
