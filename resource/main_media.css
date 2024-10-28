@@ -29,6 +29,15 @@
         cursor: pointer;
     }
 
+    .main__btn{
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+
     .link__showmore:hover{
         background:  var(--main-color);
     }
@@ -36,12 +45,7 @@
     .link__showmore:hover div .arrow{ 
         background: url(./images/arrow_hover.png) center/cover no-repeat;
     }
-
-    .main__btn{
-        cursor: pointer;
-        overflow: hidden;
-    }
-
+    
     .main__btn::before{
         content: "";
         position: absolute;
@@ -92,11 +96,10 @@
         opacity: 1;
         cursor: pointer;
     }
-
 }
 
 
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
     
     .container{
         width: min(95%, 1280px);
@@ -159,14 +162,6 @@
         left: 35%;
     }
 
-    .link__showmore:hover{
-        background:  var(--main-color);
-    }
-
-    .link__showmore:hover div .arrow{ 
-        background: url(./images/arrow_hover.png) center/cover no-repeat;
-    }
-
     .main__btn{
         cursor: pointer;
         overflow: hidden;
@@ -174,64 +169,10 @@
         padding: 1rem 2rem;
     }
 
-    .main__btn::before{
-        content: "";
-        position: absolute;
-        top: var(--y);
-        left: var(--x);
-        transform: translate(-50%, -50%) scale(0);
-        transition: transform 750ms;
-        width: 150%;
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        opacity: 0.5;
-    }
-    
-    .pulse::before {
-        animation: pulse 500ms;
-    }
-    
-    @keyframes pulse {
-        0% { 
-        transform: translate(-50%, -50%) scale(0); 
-        opacity: 0.5;
-        } 
-    
-        100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0;
-        }
-    }
-
-    .main__btn:hover, .form-btn:hover{
-        
-        color: #B33421;
-        background:  var(--main-color);
-        cursor: pointer;
-    }
-
-    .form-btn:hover{
-        
-        border: 1px solid #B33421;
-    }
-
-    .main__btn:hover::before{
-
-        background: linear-gradient(90deg, #2D0404 17.4%, #B33421 100%);
-    }
-
-    .close__btn:hover, .close__signUp-btn:hover{
-        opacity: 1;
-        cursor: pointer;
-    }
-
 }
 
 @media screen and (max-width: 1023px) {
 
-    .container{
-        width: min(100%, 1280px);
-    }
 
     .title{
         margin-top: 2rem;
@@ -241,43 +182,16 @@
 
         font-size: 5rem;
     }
-}
-
-@media screen and (max-width: 900px) {
 
     .title__aim-proger, .title__aim-recruiter{
     
         font-size: 2rem;
     
     }
-
-    .purpose_1{
-    
-        margin-left: 10%;
-    }
-    .purpose_2{
-        
-        margin-left: 10%;
-    }
-    .purpose_3{
-        
-        margin-left: 10%;
-    }
-    .purpose_4{
-        margin-left: 10%;
-        
-    }
-    .purpose_5{
-        
-        margin-left: 10%;
-    }
-
-    .essence__text{
-        width: 70%;
-    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+
 
     .title__about{
         width: 90%;
@@ -292,8 +206,12 @@
 
     .main__title-1, .main__title-2{
 
-        font-size: 3.5rem;
+        font-size: 4rem;
         
+    }
+
+    .title__aim{
+        width: 90%;
     }
 
     .title__aim-proger, .title__aim-recruiter{
@@ -302,36 +220,209 @@
     
     }
 
-    .purposes{
-        width: min(70%, 35rem);
-        position: static;
-        height: 30rem;
-        
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 2rem;
+    .purposes ul li {
+        font-size: 1rem;
+    }
+
+    .link__showmore{
+        width: 61px;
+        height: 59px;
+    }
+
+    .link__showmore div .arrow{
+        display: inline-block;
+        padding: 0.4rem 2rem;
+    }
+
+    .main__btn{
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    .essence__text{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .main__title-1{
+
+        -webkit-text-stroke: 2px var(--main-color);
+    }
+
+    .purposes ul li {
+        font-size: 0.9rem;
+    }
+
+    .link__showmore{
+   
+        left: 45%;
+    }
+
+    .main__btn{
+        font-size: 0.9rem;
+        padding: 0.9rem 1.5rem;
+
     }
 
     .essence__text{
         width: 80%;
     }
 
-    .link__showmore{
-        
-        /* right: 5%; */
+}
+
+@media screen and (max-width: 650px) {
+
+    main{
+        background: linear-gradient(139.31deg, rgba(23, 20, 20, 0.6) 22.14%, rgba(23, 20, 20, 0.6) 52.97%, rgba(23, 20, 20, 0.6) 98.39%), url(./images/background_img_2.png) 0% 0%/cover no-repeat;
     }
 
-    .main__btn{
-        margin-top: 2rem;
-        align-self: center;
-        margin-right: 0;
+    .title__about{
+
+        font-size: 1.15rem;
+        
+    }
+
+
+    .main__title-1, .main__title-2{
+
+        font-size: 3rem;
+        
+    }
+
+
+    .title__aim-proger, .title__aim-recruiter{
+    
+        font-size: 1.25rem;
+    
+    }
+
+    .link__showmore div .arrow{
+        right: 40%;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .form__body{
-        width: 95%;
+@media screen and (max-width: 550px) {
+
+    .container{
+        
+        padding-bottom: 1rem;
     }
+
+
+    .main__title-1{
+
+        -webkit-text-stroke: 1px var(--main-color);
+    }
+
+    .purposes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 3rem;
+    }
+
+    .purposes ul li .line{
+        display: none;
+    }
+
+    .purpose_1{
+    
+        margin-left: 5%;
+    }
+    .purpose_2{
+        
+        margin-left: 10%;
+    }
+    .purpose_3{
+        
+        margin-left: 15%;
+    }
+
+    .purpose_4{
+        margin-left: 20%;
+        
+    }
+    .purpose_5{
+        
+        margin-left: 25%;
+    }
+
+    .link__showmore{
+
+        width: 51px;
+        height: 49px;
+
+        top: 25%;
+        left: 75%;
+        transform: translateY(0);
+        border: 1px solid var(--main-color);
+    }
+
+    .main__btn{
+        position: static;
+
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem 2rem 2rem;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .title__about{
+
+        font-size: 1.2rem;
+        
+    }
+
+
+    .main__title-1, .main__title-2{
+
+        font-size: 2.5rem;
+        
+    }
+
+    .title__aim{
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+
+    .title__aim-proger, .title__aim-recruiter{
+    
+        font-size: 1.5rem;
+    
+    }
+
+    .main__btn{
+
+        font-size: 0.85rem;
+        padding: 1rem 3rem 1.3rem 3rem;
+
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .title__about{
+
+        font-size: 1rem;
+        
+    }
+
+
+    .main__title-1, .main__title-2{
+
+        font-size: 2rem;
+        
+    }
+
+    .title__aim-proger, .title__aim-recruiter{
+    
+        font-size: 1.3rem;
+    
+    }
+
 }
