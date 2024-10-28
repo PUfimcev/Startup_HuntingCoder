@@ -10,6 +10,7 @@ class GetDescription{
         if(!this.#descriptionElem || !this.#callDescriptionElem) return;
         
         this.getDescription();
+
     }
 
     getDescription(){
